@@ -1,57 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kitten Health | Morty Dom Cattery</title>
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      margin: 0;
-      background: #f5f1e8;
-      color: #3a3226;
-      line-height: 1.7;
-    }
-    .nav {
-      background: #2b241b;
-      padding: 20px;
-      text-align: center;
-    }
-    .nav a {
-      color: #d4b483;
-      text-decoration: none;
-      margin: 0 16px;
-      font-weight: 500;
-      font-size: 15px;
-    }
-    .nav a:hover {
-      color: #fff;
-    }
-    .header {
-      background: #3a3226;
-      color: #f5f1e8;
-      padding: 70px 20px;
-      text-align: center;
-    }
-    .header h1 {
-      font-size: 40px;
-      margin: 0;
-      color: #d4b483;
-      font-weight: 300;
-    }
-    .section {
-      padding: 70px 20px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .section h2 {
-      color: #3a3226;
-      border-bottom: 2px solid #d4b483;
-      padding-bottom: 10px;
-      margin-bottom: 30px;
-    }
-    .guarantee {
-      background: #fff;
-      padding: 30px;
-      border-radius: 4px;
-      box-shadow: 0 2px 8px rgba(0,0,
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitten Health | Morty Dom Cattery</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            margin: 0;
+            background: #f5f1e8;
+            color: #3a3226;
+            line-height: 1.7;
+        }
+        .nav {
+            background: #2b241b;
+            padding: 20px;
+            text-align: center;
+        }
+        .nav a {
+            color: #d4b483;
+            text-decoration: none;
+            margin: 0 16px;
+            font-weight: 500;
+            font-size: 15px;
+        }
+        .nav a:hover {
+            color: #fff;
+        }
+        .header {
+            background: #3a3226;
+            color: #f5f1e8;
+            padding: 70px 20px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 40px;
+            margin: 0 0 10px 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        .section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .section h2 {
+            color: #2b241b;
+            font-size: 28px;
+            margin-top: 0;
+            border-bottom: 2px solid #d4b483;
+            padding-bottom: 15px;
+        }
+        .section h3 {
+            color: #3a3226;
+            font-size: 22px;
+            margin-top: 30px;
+        }
+        .section ul {
+            padding-left: 20px;
+        }
+        .section li {
+            margin-bottom: 12px;
+        }
+        .guarantee {
+            background: #2b241b;
+            color: #f5f1e8;
+            padding: 40px;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+        .guarantee h2 {
+            color: #d4b483;
+            border-bottom: 2px solid #d4b483;
+        }
+        .footer {
+            background: #2b241b;
+            color: #d4b483;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="kittens.html">Available Kittens</a>
+        <a href="health.html">Kitten Health</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="header">
+        <h1>Kitten Health & Guarantee</h1>
+        <p>Raising healthy, happy kittens is our top priority</p>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Our Health Protocol</h2>
+            <p>Every kitten at Morty Dom Cattery receives comprehensive veterinary care before joining their forever home. We work exclusively with licensed veterinarians and follow strict health standards.</p>
+            
+            <h3>All Kittens Receive:</h3>
+            <ul>
+                <li>Complete veterinary health examination</li>
+                <li>First round of core vaccinations (FVRCP)</li>
+                <li>Deworming treatments at 2, 4, 6, and 8 weeks</li>
+                <li>Flea and parasite prevention</li>
+                <li>Microchipping for permanent identification</li>
+                <li>Veterinary health certificate for travel</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Breed-Specific Testing</h2>
+            
+            <h3>Ragdoll</h3>
+            <ul>
+                <li>HCM (Hypertrophic Cardiomyopathy) DNA tested parents</li>
+                <li>PKD (Polycystic Kidney Disease) negative</li>
+                <li>FIV/FeLV tested negative</li>
+            </ul>
+
+            <h3>Maine Coon</h3>
+            <ul>
+                <li>HCM DNA tested parents</li>
+                <li>SMA (Spinal Muscular Atrophy) tested</li>
+                <li>PKD negative</li>
+                <li>Hip dysplasia screening</li>
+                <li>FIV/FeLV tested negative</li>
+            </ul>
+
+            <h3>British Shorthair</h3>
+            <ul>
+                <li>PKD DNA tested negative</li>
+                <li>FIV/FeLV tested negative</li>
+                <li>Annual heart screening for breeding cats</li>
+            </ul>
+        </div>
+
+        <div class="guarantee">
+            <h2>Our 2-Year Health Guarantee</h2>
+            <p>We stand behind the health of our kittens. Every kitten comes with a 2-year genetic health guarantee covering hereditary conditions including HCM, PKD, and SMA.</p>
+            <p>If your veterinarian diagnoses a covered genetic condition within 2 years, we will provide a replacement kitten or refund at our discretion. We require veterinary documentation and reserve the right to a second opinion.</p>
+            <p><strong>Important:</strong> This guarantee requires that you maintain regular veterinary care and keep your kitten indoors. The guarantee is void if the kitten is bred, neglected, or allowed outdoors unsupervised.</p>
+        </div>
+
+        <div class="section">
+            <h2>Going Home Package</h2>
+            <p>Your kitten will go home with everything needed for a smooth transition:</p>
+            <ul>
+                <li>Complete vaccination and medical records</li>
+                <li>Signed health certificate from our veterinarian</li>
+                <li>Microchip registration paperwork</li>
+                <li>5-day supply of current food</li>
+                <li>Blanket with mother and littermate scent</li>
+                <li>Favorite toy for comfort</li>
+                <li>Detailed care guide and feeding schedule</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2026 Morty Dom Cattery | TICA Registered | Camarillo, CA</p>
+        <p>Questions about kitten health? <a href="contact.html" style="color: #d4b483;">Contact us</a></p>
+    </div>
+</body>
+</html>
