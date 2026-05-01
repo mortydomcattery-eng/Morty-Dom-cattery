@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Morty Dom Cattery | Premium Kittens in Bamenda</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap');
+    :root { --gold: #C9A961; --charcoal: #1A1A1A; --cream: #F8F5F0; --gray: #6B6B6B; --green: #2D5F3F; --red: #8B2635; --amber: #B86F00; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.6; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    header { background: white; border-bottom: 1px solid #E8E3DD; padding: 30px 0; text-align: center; }
+    header h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; }
+    header p { color: var(--gray); margin-top: 8px; font-size: 0.95rem; letter-spacing: 0.5px; }
+    .gold-line { width: 60px; height: 2px; background: var(--gold); margin: 20px auto 0; }
+    .intro { text-align: center; padding: 60px 20px 40px; max-width: 700px; margin: 0 auto; }
+    .intro h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 16px; }
+    .kitten-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 40px; padding: 20px 0 80px; }
+    .kitten-card { background: white; border: 1px solid #E8E3DD; border-radius: 8px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .kitten-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.08); }
+    .gallery-main { width: 100%; height: 380px; object-fit: cover; display: block; }
+    .gallery-thumbs { display: flex; gap: 8px; padding: 12px; background: #FAFAFA; overflow-x: auto; }
+    .gallery-thumbs img { width: 60px; height: 60px; object-fit: cover; border-radius: 4px; cursor: pointer; opacity: 0.6; border: 2px solid transparent; transition: all 0.2s ease; }
+    .gallery-thumbs img:hover, .gallery-thumbs img.active { opacity: 1; border-color: var(--gold); }
+    .kitten-info { padding: 24px; }
+    .kitten-header { display: flex; justify-content: space-between; align-items: start; margin-bottom: 12px; }
+    .kitten-name { font-family: 'Playfair Display', serif; font-size: 1.75rem; font-weight: 500; }
+    .status { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.8px; padding: 6px 12px; border-radius: 20px; text-transform: uppercase; }
+    .status.available { background: #E8F5E9; color: var(--green); }
+    .status.reserved { background: #FFF3E0; color: var(--amber); }
+    .status.sold { background: #FFEBEE; color: var(--red); }
+    .kitten-meta { display: flex; gap: 16px; font-size: 0.9rem; color: var(--gray); margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #F0EDE8; }
+    .price { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 12px; }
+    .personality { font-size: 0.95rem; color: var(--gray); margin-bottom: 20px; line-height: 1.7; }
+    .btn { display: inline-block; width: 100%; text-align: center; background: var(--charcoal); color: white; padding: 14px 24px; text-decoration: none; font-weight: 500; font-size: 0.9rem; border-radius: 4px; transition: background 0.3s ease; }
+    .btn:hover { background: var(--gold); color: var(--charcoal); }
+    .btn.disabled { background: #E8E3DD; color: var(--gray); cursor: not-allowed; pointer-events: none; }
+    .contact-section { background: var(--charcoal); color: white; padding: 80px 20px; text-align: center; }
+    .contact-section h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 16px; }
+    .btn-gold { background: var(--gold); color: var(--charcoal); padding: 16px 40px; font-weight: 600; }
+    footer { background: #111; color: #777; text-align: center; padding: 30px 20px; font-size: 0.85rem; }
+    @media (max-width: 768px) { .kitten-grid { grid-template-columns: 1fr; gap: 30px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Morty Dom Cattery</h1>
+      <p>PREMIUM RAGDOLL • MAINE COON • MUNCHKIN KITTENS</p>
+      <div class="gold-line"></div>
+    </div>
+  </header>
+
+  <section class="intro">
+    <div class="container">
+      <h2>Available Kittens</h2>
+      <p>Hand-raised with love in Bamenda. Each kitten comes socialized, vet-checked, and ready for their forever home.</p>
+    </div>
+  </section>
+
+  <main class="container">
+    <div class="kitten-grid">
+
+      <!-- Luna - SOLD - 4 photos -->
+      <div class="kitten-card">
+        <img src="images/luna-munchkin-1.jpg" alt="Luna" class="gallery-main" id="luna-main">
+        <div class="gallery-thumbs">
+          <img src="images/luna-munchkin-1.jpg" class="active" onclick="changeImage('luna-main', this)">
+          <img src="images/luna-munchkin-2.jpg" onclick="changeImage('luna-main', this)">
+          <img src="images/luna-munchkin-3.jpg" onclick="changeImage('luna-main', this)">
+          <img src="images/luna-munchkin-4.jpg" onclick="changeImage('luna-main', this)">
+        </div>
+        <div class="kitten-info">
+          <div class="kitten-header"><h3 class="kitten-name">Luna</h3><span class="status sold">Sold</span></div>
+          <div class="kitten-meta"><span>Munchkin</span><span>Female</span><span>10 weeks</span></div>
+          <div class="price">$800</div>
+          <p class="personality">Sweet-natured and loyal companion with beautiful manners and a loving temperament. Very people-oriented and easy to bond with.</p>
+          <a href="#" class="btn disabled">Adopted</a>
+        </div>
+      </div>
+
+      <!-- Milo - AVAILABLE - 4 photos -->
+      <div class="kitten-card">
+        <img src="images/milo-ragdoll-1.jpg" alt="Milo" class="gallery-main" id="milo-main">
+        <div class="gallery-thumbs">
+          <img src="images/milo-ragdoll-1.jpg" class="active" onclick="changeImage('milo-main', this)">
+          <img src="images/milo-ragdoll-2.jpg" onclick="changeImage('milo-main', this)">
+          <img src="images/milo-ragdoll-3.jpg" onclick="changeImage('milo-main', this)">
+          <img src="images/milo-ragdoll-4.jpg" onclick="changeImage('milo-main', this)">
+        </div>
+        <div class="kitten-info">
+          <div class="kitten-header"><h3 class="kitten-name">Milo</h3><span class="status available">Available</span></div>
+          <div class="kitten-meta"><span>Ragdoll</span><span>Male</span><span>12 weeks</span></div>
+          <div class="price">$950</div>
+          <p class="personality">Friendly and trusting Ragdoll with a sweet, easygoing attitude. Gets along well with children and other pets, and enjoys constant human attention.</p>
+          <a href="https://mortydomcattery.site/contact.html" class="btn">Inquire About Milo</a>
+        </div>
+      </div>
+
+      <!-- Zeus - RESERVED - 4 photos -->
+      <div class="kitten-card">
+        <img src="images/zeus-mainecoon-1.jpg" alt="Zeus" class="gallery-main" id="zeus-main">
+        <div class="gallery-thumbs">
+          <img src="images/zeus-mainecoon-1.jpg" class="active" onclick="changeImage('zeus-main', this)">
+          <img src="images/zeus-mainecoon-2.jpg" onclick="changeImage('zeus-main', this)">
+          <img src="images/zeus-mainecoon-3.jpg" onclick="changeImage('zeus-main', this)">
+          <img src="images/zeus-mainecoon-4.jpg" onclick="changeImage('zeus-main', this)">
+        </div>
+        <div class="kitten-info">
+          <div class="kitten-header"><h3 class="kitten-name">Zeus</h3><span class="status reserved">Reserved</span></div>
+          <div class="kitten-meta"><span>Maine Coon</span><span>Male</span><span>11 weeks</span></div>
+          <div class="price">$1,200</div>
+          <p class="personality">Calm, affectionate, and highly intelligent. Gets along well with other pets and children. Loves being part of the family and enjoys attention.</p>
+          <a href="#" class="btn disabled">Reserved</a>
+        </div>
+      </div>
+
+      <!-- Rosie - AVAILABLE - 3 photos -->
+      <div class="kitten-card">
+        <img src="images/rosie-mainecoon-1.jpg" alt="Rosie" class="gallery-main" id="rosie-main">
+        <div class="gallery-thumbs">
+          <img src="images/rosie-mainecoon-1.jpg" class="active" onclick="changeImage('rosie-main', this)">
+          <img src="images/rosie-mainecoon-2.jpg" onclick="changeImage('rosie-main', this)">
+          <img src="images/rosie-mainecoon-3.jpg" onclick="changeImage('rosie-main', this)">
+        </div>
+        <div class="kitten-info">
+          <div class="kitten-header"><h3 class="kitten-name">Rosie</h3><span class="status available">Available</span></div>
+          <div class="kitten-meta"><span>Maine Coon</span><span>Female</span><span>12 weeks</span></div>
+          <div class="price">$1,100</div>
+          <p class="personality">Gentle and loyal with a calm, affectionate nature. Very intelligent and social. Enjoys being around people and other pets.</p>
+          <a href="https://mortydomcattery.site/contact.html" class="btn">Inquire About Rosie</a>
+        </div>
+      </div>
+
+      <!-- Coco - AVAILABLE - 3 photos -->
+      <div class="kitten-card">
+        <img src="images/coco-ragdoll-1.jpg" alt="Coco" class="gallery-main" id="coco-main">
+        <div class="gallery-thumbs">
+          <img src="images/coco-ragdoll-1.jpg" class="active" onclick="changeImage('coco-main', this)">
+          <img src="images/coco-ragdoll-2.jpg" onclick="changeImage('coco-main', this)">
+          <img src="images/coco-ragdoll-3.jpg" onclick="changeImage('coco-main', this)">
+        </div>
+        <div class="kitten-info">
+          <div class="kitten-header"><h3 class="kitten-name">Coco</h3><span class="status available">Available</span></div>
+          <div class="kitten-meta"><span>Ragdoll</span><span>Male</span><span>11 weeks</span></div>
+          <div class="price">$900</div>
+          <p class="personality">Friendly and trusting Ragdoll with a sweet, easygoing attitude. Gets along well with children and other pets, and enjoys constant human attention.</p>
+          <a href="https://mortydomcattery.site/contact.html" class="btn">Inquire About Coco</a>
+        </div>
+      </div>
+
+      <!-- Aurora - AVAILABLE - 4 photos -->
+      <div class="kitten-card">
+        <img src="images/aurora-munchkin-1.jpg" alt="Aurora" class="gallery-main" id="aurora-main">
+        <div class="gallery-thumbs">
+          <img src="images/aurora-munchkin-1.jpg" class="active" onclick="changeImage('aurora-main', this)">
+          <img src="images/aurora-munchkin-2.jpg" onclick="changeImage('aurora-main', this)">
+          <img src="images/aurora-munchkin-3.jpg" onclick="changeImage('aurora-main', this)">
+          <img src="images/aurora-munchkin-4.jpg" onclick="changeImage('aurora-main', this)">
+        </div>
+        <div class="kitten-info">
+          <div class="kitten-header"><h3 class="kitten-name">Aurora</h3><span class="status available">Available</span></div>
+          <div class="kitten-meta"><span>Munchkin</span><span>Female</span><span>10 weeks</span></div>
+          <div class="price">$850</div>
+          <p class="personality">Sweet-natured and loyal companion with beautiful manners and a loving temperament. Very people-oriented and easy to bond with.</p>
+          <a href="https://mortydomcattery.site/contact.html" class="btn">Inquire About Aurora</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2>Reserve Your Kitten</h2>
+      <p>Ready to welcome a Morty Dom kitten into your family? Contact us today.</p>
+      <a href="https://mortydomcattery.site/contact.html" class="btn btn-gold">Contact Us</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Morty Dom Cattery. Bamenda, Northwest Region, Cameroon. All kittens are home-raised and vet-checked.</p>
+    </div>
+  </footer>
+
+<script>
+  function changeImage(mainId, thumb) {
+    document.getElementById(mainId).src = thumb.src;
+    let thumbs = thumb.parentElement.querySelectorAll('img');
+    thumbs.forEach(t => t.classList.remove('active'));
+    thumb.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
