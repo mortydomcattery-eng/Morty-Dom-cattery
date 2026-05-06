@@ -1,166 +1,589 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO for Google -->
-    <title>Morty Dom Cattery | TICA Registered Kittens in Brooklyn, New York</title>
-    <meta name="description" content="Morty Dom Cattery: Ethical, home-raised Maine Coon, Munchkin & Ragdoll kittens from Brooklyn, NY. TICA registered, health tested, socialized. Contact us for available kittens.">
-    <link rel="canonical" href="https://mortydomcattery.site/mortydomcattery-eng/">
-    <meta name="robots" content="index, follow">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Morty Dom Cattery | TICA Registered Kittens in Brooklyn, New York</title>
+  <meta name="description" content="Morty Dom Cattery: Ethical, home-raised Maine Coon, Munchkin & Ragdoll kittens from Brooklyn, NY. TICA registered, health tested, socialized. Contact us for available kittens.">
+  <link rel="canonical" href="https://mortydomcattery.site/mortydomcattery-eng/">
+  <meta name="robots" content="index, follow">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --dark:  #2b241b;
+      --dark2: #3a3226;
+      --gold:  #d4b483;
+      --gold2: #c9a86c;
+      --cream: #f5f1e8;
+      --cream2:#ede8da;
+      --muted: #a89984;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      margin: 0;
-      background: #f5f1e8;
-      color: #3a3226;
+      font-family: 'Jost', sans-serif;
+      background: var(--cream);
+      color: var(--dark2);
       line-height: 1.7;
+      overflow-x: hidden;
     }
+
+    /* NAV */
     .nav {
-      background: #2b241b;
-      padding: 20px;
-      text-align: center;
+      background: var(--dark);
+      padding: 18px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.3);
     }
-    .nav a {
-      color: #d4b483;
+    .nav-brand {
+      color: var(--gold);
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      letter-spacing: 1px;
       text-decoration: none;
-      margin: 0 16px;
+    }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a {
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 13px;
       font-weight: 500;
-      font-size: 15px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.2s;
     }
-    .nav a:hover {
-      color: #fff;
-    }
+    .nav-links a:hover { color: #fff; }
+
+    /* HERO */
     .hero {
-      background: #3a3226;
-      color: #f5f1e8;
-      padding: 100px 20px;
+      background: var(--dark2);
+      min-height: 94vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
+      padding: 80px 24px 110px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 55% at 50% 40%, rgba(212,180,131,0.10) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 36px; left: 36px; right: 36px; bottom: 36px;
+      border: 1px solid rgba(212,180,131,0.12);
+      pointer-events: none;
+    }
+    .hero-logo {
+      width: min(52vw, 400px);
+      height: auto;
+      margin: 0 auto 36px;
+      animation: fadeDown 0.9s ease both;
+    }
+    .hero-eyebrow {
+      font-size: 12px; font-weight: 500;
+      letter-spacing: 4px; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 18px;
+      animation: fadeDown 0.9s 0.1s ease both;
     }
     .hero h1 {
-      font-size: 44px;
-      margin: 0 0 10px 0;
-      color: #d4b483;
-      font-weight: 300;
-      letter-spacing: 0.5px;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(30px, 5.5vw, 58px);
+      color: var(--cream);
+      font-weight: 400; line-height: 1.22;
+      max-width: 700px; margin: 0 auto 20px;
+      animation: fadeDown 0.9s 0.2s ease both;
     }
-    .hero h2 {
-      font-size: 22px;
-      font-weight: 400;
-      margin: 0 0 25px 0;
-      opacity: 0.9;
+    .hero h1 em { color: var(--gold); font-style: italic; }
+    .hero-sub {
+      color: rgba(245,241,232,0.55);
+      font-size: 15px; letter-spacing: 0.5px;
+      margin-bottom: 44px;
+      animation: fadeDown 0.9s 0.3s ease both;
     }
+    .hero-btns {
+      display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+      animation: fadeDown 0.9s 0.4s ease both;
+    }
+
     .btn {
-      background: #d4b483;
-      color: #2b241b;
-      padding: 14px 32px;
-      text-decoration: none;
+      padding: 14px 36px;
       border-radius: 2px;
-      font-weight: 600;
+      font-family: 'Jost', sans-serif;
+      font-size: 13px; font-weight: 600;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.25s;
       display: inline-block;
-      margin-top: 10px;
     }
-    .section {
-      padding: 80px 20px;
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
+    .btn-primary { background: var(--gold); color: var(--dark); }
+    .btn-primary:hover {
+      background: var(--gold2);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(212,180,131,0.3);
     }
-    .breeds {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      margin: 40px 0;
-      flex-wrap: wrap;
+    .btn-outline {
+      border: 1.5px solid rgba(212,180,131,0.45);
+      color: var(--gold);
     }
-    .breed {
+    .btn-outline:hover {
+      border-color: var(--gold);
+      background: rgba(212,180,131,0.07);
+      transform: translateY(-2px);
+    }
+
+    .scroll-cue {
+      position: absolute; bottom: 30px; left: 50%;
+      transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      color: rgba(212,180,131,0.35);
+      font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+      animation: floatY 2.6s ease-in-out infinite;
+    }
+    .scroll-cue::after {
+      content: '';
+      display: block; width: 1px; height: 38px;
+      background: linear-gradient(to bottom, rgba(212,180,131,0.35), transparent);
+    }
+
+    /* TRUST STRIP */
+    .trust-strip {
+      background: var(--gold);
+      padding: 16px 20px;
+      display: flex; justify-content: center; gap: 36px; flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 1px; text-transform: uppercase;
+      color: var(--dark);
+    }
+    .trust-item .ti { font-size: 17px; }
+
+    /* SECTION HEADERS */
+    .section-label {
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--gold2); margin-bottom: 10px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(26px, 4vw, 40px);
+      font-weight: 400; color: var(--dark2);
+      margin-bottom: 12px;
+    }
+    .section-desc {
+      max-width: 580px; margin: 0 auto 52px;
+      color: var(--muted); font-size: 15px;
+    }
+
+    /* WHY US */
+    .why {
       background: #fff;
-      padding: 30px 20px;
-      border-radius: 4px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      width: 220px;
-    }
-    .breed h3 {
-      color: #3a3226;
-      margin: 0 0 10px 0;
-    }
-    footer {
-      background: #2b241b;
-      color: #a89984;
+      padding: 90px 20px;
       text-align: center;
-      padding: 40px 20px;
-      font-size: 14px;
+    }
+    .why-grid {
+      display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;
+      max-width: 960px; margin: 0 auto;
+    }
+    .why-card {
+      background: var(--cream);
+      border: 1px solid var(--cream2);
+      border-radius: 4px;
+      padding: 36px 24px; width: 210px;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .why-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 36px rgba(58,50,38,0.08);
+    }
+    .why-card .big-icon { font-size: 38px; margin-bottom: 14px; display: block; }
+    .why-card h3 { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
+    .why-card p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    /* BREEDS */
+    .breeds-section {
+      background: var(--cream);
+      padding: 90px 20px;
+      text-align: center;
+    }
+    .breeds-grid {
+      display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;
+      max-width: 960px; margin: 0 auto;
+    }
+    .breed-card {
+      background: #fff;
+      border-radius: 4px; overflow: hidden;
+      width: 280px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      transition: transform 0.25s, box-shadow 0.25s;
+      text-align: left;
+    }
+    .breed-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 44px rgba(58,50,38,0.12);
+    }
+    .breed-img-slot {
+      width: 100%; height: 200px;
+      background: var(--cream2);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 8px;
+      color: var(--muted); overflow: hidden;
+    }
+    .breed-img-slot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .breed-img-slot .paw { font-size: 42px; opacity: 0.3; }
+    .breed-img-slot .slot-label {
+      font-size: 10px; letter-spacing: 2px;
+      text-transform: uppercase; opacity: 0.6;
+    }
+    .breed-body { padding: 26px 22px; }
+    .breed-tag {
+      display: inline-block;
+      background: var(--cream2); color: var(--gold2);
+      font-size: 10px; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 20px; margin-bottom: 10px;
+    }
+    .breed-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px; font-weight: 400;
+      color: var(--dark2); margin-bottom: 8px;
+    }
+    .breed-body p { font-size: 13px; color: var(--muted); line-height: 1.65; }
+    .breed-link {
+      display: inline-block; margin-top: 16px;
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 1px; text-transform: uppercase;
+      color: var(--gold2); text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .breed-link:hover { border-color: var(--gold2); }
+
+    /* GALLERY */
+    .gallery-section {
+      background: var(--dark2);
+      padding: 90px 20px;
+      text-align: center;
+    }
+    .gallery-section .section-title { color: var(--cream); }
+    .gallery-section .section-desc { color: rgba(245,241,232,0.45); }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      max-width: 960px; margin: 0 auto;
+    }
+    .gallery-slot {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(212,180,131,0.10);
+      border-radius: 4px; height: 200px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 10px;
+      color: rgba(212,180,131,0.25);
+      font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+      transition: background 0.2s; overflow: hidden;
+    }
+    .gallery-slot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .gallery-slot:hover { background: rgba(212,180,131,0.04); }
+    .gallery-slot .cam { font-size: 30px; opacity: 0.25; }
+
+    /* TESTIMONIALS */
+    .testimonials {
+      background: #fff;
+      padding: 90px 20px;
+      text-align: center;
+    }
+    .testi-grid {
+      display: flex; justify-content: center; gap: 22px; flex-wrap: wrap;
+      max-width: 960px; margin: 0 auto;
+    }
+    .testi-card {
+      background: var(--cream);
+      border-left: 3px solid var(--gold);
+      border-radius: 4px;
+      padding: 32px 26px; width: 280px;
+      text-align: left;
+      transition: transform 0.2s;
+    }
+    .testi-card:hover { transform: translateY(-3px); }
+    .stars { color: var(--gold); font-size: 15px; margin-bottom: 14px; letter-spacing: 2px; }
+    .testi-card blockquote {
+      font-family: 'Playfair Display', serif;
+      font-style: italic; font-size: 15px;
+      color: var(--dark2); line-height: 1.7;
+      margin-bottom: 18px;
+    }
+    .testi-author {
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* CTA BANNER */
+    .cta-banner {
+      background: var(--dark);
+      padding: 80px 20px;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .cta-banner::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(212,180,131,0.07) 0%, transparent 70%);
+    }
+    .cta-banner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(24px, 4vw, 42px);
+      color: var(--cream); font-weight: 400;
+      margin-bottom: 14px; position: relative;
+    }
+    .cta-banner h2 em { color: var(--gold); font-style: italic; }
+    .cta-banner p {
+      color: rgba(245,241,232,0.5); font-size: 15px;
+      margin-bottom: 36px; position: relative;
+    }
+    .cta-banner .btn { position: relative; }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      border-top: 1px solid rgba(212,180,131,0.1);
+      color: var(--muted);
+      text-align: center;
+      padding: 36px 20px;
+      font-size: 13px;
+    }
+    footer a { color: var(--gold); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ANIMATIONS */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes floatY {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(7px); }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 700px) {
+      .nav { padding: 14px 18px; }
+      .nav-links { gap: 14px; }
+      .nav-links a { font-size: 11px; letter-spacing: 0.5px; }
+      .hero::after { display: none; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .why-card { width: 150px; padding: 24px 14px; }
+      .breed-card, .testi-card { width: 100%; max-width: 340px; }
     }
   </style>
+
 </head>
 <body>
-  <div class="nav">
-    <a href="index.html">Home</a>
-    <a href="kittens.html">Available Kittens</a>
-    <a href="health.html">Kitten Health</a>
-    <a href="about.html">About Us</a>
-    <a href="contact.html">Contact</a>
+
+  <!-- NAV -->
+
+  <nav class="nav">
+    <a href="index.html" class="nav-brand">Morty Dom Cattery</a>
+    <div class="nav-links">
+      <a href="kittens.html">Kittens</a>
+      <a href="health.html">Health</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+    <img src="images/logo.png?v=19" alt="Morty Dom Cattery" class="hero-logo">
+    <p class="hero-eyebrow">Brooklyn, New York &nbsp;·&nbsp; TICA Registered</p>
+    <h1>Where Every Kitten is <em>Raised with Love</em></h1>
+    <p class="hero-sub">Maine Coon &nbsp;·&nbsp; Munchkin &nbsp;·&nbsp; Ragdoll &nbsp;|&nbsp; Health Tested &amp; Home Raised</p>
+    <div class="hero-btns">
+      <a href="kittens.html" class="btn btn-primary">View Available Kittens</a>
+      <a href="about.html" class="btn btn-outline">Our Story</a>
+    </div>
+    <div class="scroll-cue">Scroll</div>
+  </section>
+
+  <!-- TRUST STRIP -->
+
+  <div class="trust-strip">
+    <div class="trust-item"><span class="ti">🐾</span> TICA Registered</div>
+    <div class="trust-item"><span class="ti">🩺</span> Vet Checked</div>
+    <div class="trust-item"><span class="ti">💉</span> Fully Vaccinated</div>
+    <div class="trust-item"><span class="ti">🏡</span> Home Raised</div>
+    <div class="trust-item"><span class="ti">❤️</span> Health Guaranteed</div>
   </div>
 
-  <div class="hero">
-    <img src="images/logo.png?v=19" alt="M&D Kitten Cattery" style="width: 60vw; max-width: 800px; height: auto; display: block; margin: 40px auto 20px;">
-    <h2>Luxury Maine Coon • Munchkin • Ragdoll Kittens</h2>
-<p>Health tested • Vet checked • Raised in a loving home • TICA bloodlines</p>
-    <a href="kittens.html" class="btn">View Available Kittens</a>
+  <!-- WHY US -->
+
+  <section class="why">
+    <p class="section-label">Why Choose Us</p>
+    <h2 class="section-title">The Morty Dom Difference</h2>
+    <p class="section-desc">We prioritize health, temperament, and ethical breeding practices to ensure every kitten finds the perfect loving home.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="big-icon">🐾</span>
+        <h3>TICA Bloodlines</h3>
+        <p>Registered pedigree breeding standards you can trust.</p>
+      </div>
+      <div class="why-card">
+        <span class="big-icon">🩺</span>
+        <h3>Vet Checked</h3>
+        <p>Every kitten is fully health screened before going home.</p>
+      </div>
+      <div class="why-card">
+        <span class="big-icon">💉</span>
+        <h3>Vaccinated</h3>
+        <p>Up-to-date vaccinations and deworming included.</p>
+      </div>
+      <div class="why-card">
+        <span class="big-icon">🏡</span>
+        <h3>Home Raised</h3>
+        <p>Socialized with children and other pets from birth.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BREEDS -->
+
+  <section class="breeds-section">
+    <p class="section-label">Our Specialties</p>
+    <h2 class="section-title">Meet Our Breeds</h2>
+    <p class="section-desc">Each breed we raise is chosen for exceptional temperament, beauty, and compatibility with loving families.</p>
+    <div class="breeds-grid">
+
+```
+  <div class="breed-card">
+    <div class="breed-img-slot">
+      <!-- To add your photo replace the 3 lines below with: <img src="images/maine-coon.jpg" alt="Maine Coon Kitten"> -->
+      <span class="paw">🐱</span>
+      <span class="slot-label">Add your photo here</span>
+    </div>
+    <div class="breed-body">
+      <span class="breed-tag">Available Now</span>
+      <h3>Maine Coon</h3>
+      <p>Gentle giants known for their majestic size, high intelligence, and deeply playful, dog-like personalities.</p>
+      <a href="kittens.html" class="breed-link">View Kittens →</a>
+    </div>
+  </div>
+
+  <div class="breed-card">
+    <div class="breed-img-slot">
+      <!-- To add your photo replace the 3 lines below with: <img src="images/munchkin.jpg" alt="Munchkin Kitten"> -->
+      <span class="paw">🐱</span>
+      <span class="slot-label">Add your photo here</span>
+    </div>
+    <div class="breed-body">
+      <span class="breed-tag">Available Now</span>
+      <h3>Munchkin</h3>
+      <p>Adorable short-legged companions bursting with big personalities, boundless energy, and endless charm.</p>
+      <a href="kittens.html" class="breed-link">View Kittens →</a>
+    </div>
+  </div>
+
+  <div class="breed-card">
+    <div class="breed-img-slot">
+      <!-- To add your photo replace the 3 lines below with: <img src="images/ragdoll.jpg" alt="Ragdoll Kitten"> -->
+      <span class="paw">🐱</span>
+      <span class="slot-label">Add your photo here</span>
+    </div>
+    <div class="breed-body">
+      <span class="breed-tag">Available Now</span>
+      <h3>Ragdoll</h3>
+      <p>Docile, affectionate, and famously floppy lap cats with stunning blue eyes and a gentle, calm nature.</p>
+      <a href="kittens.html" class="breed-link">View Kittens →</a>
+    </div>
+  </div>
+
 </div>
-<div style="background:#fff; padding:60px 20px; text-align:center;">
-  <h2 style="margin-bottom:10px; color:#3a3226;">Why Choose Morty Dom Cattery</h2>
-  <p style="max-width:700px; margin:0 auto 30px;">
-    We prioritize health, temperament, and ethical breeding practices to ensure every kitten goes to a loving home.
-  </p>
+```
 
-  <div style="display:flex; justify-content:center; gap:30px; flex-wrap:wrap; max-width:900px; margin:0 auto;">
-    
-    <div style="width:220px;">
-      <h3>🐾 TICA Bloodlines</h3>
-      <p>Registered pedigree breeding standards.</p>
+  </section>
+
+  <!-- PHOTO GALLERY -->
+
+  <section class="gallery-section">
+    <p class="section-label" style="color: rgba(212,180,131,0.6);">From Our Home to Yours</p>
+    <h2 class="section-title">Our Kittens</h2>
+    <p class="section-desc">Add your best kitten photos here — real photos build trust and convert far more Facebook ad visitors into inquiries.</p>
+    <div class="gallery-grid">
+      <!-- Replace each slot's inner content with: <img src="images/photoX.jpg" alt="Kitten"> -->
+      <div class="gallery-slot"><span class="cam">📷</span><span>Add photo</span></div>
+      <div class="gallery-slot"><span class="cam">📷</span><span>Add photo</span></div>
+      <div class="gallery-slot"><span class="cam">📷</span><span>Add photo</span></div>
+      <div class="gallery-slot"><span class="cam">📷</span><span>Add photo</span></div>
+      <div class="gallery-slot"><span class="cam">📷</span><span>Add photo</span></div>
+      <div class="gallery-slot"><span class="cam">📷</span><span>Add photo</span></div>
     </div>
+  </section>
 
-    <div style="width:220px;">
-      <h3>🩺 Vet Checked</h3>
-      <p>All kittens health screened before adoption.</p>
-    </div>
+  <!-- TESTIMONIALS -->
 
-    <div style="width:220px;">
-      <h3>💉 Vaccinated</h3>
-      <p>Up-to-date vaccinations & deworming.</p>
-    </div>
+  <section class="testimonials">
+    <p class="section-label">Happy Families</p>
+    <h2 class="section-title">What Our Adopters Say</h2>
+    <p class="section-desc">Replace these with real reviews from your happy adopters — genuine testimonials make a huge difference in conversions.</p>
+    <div class="testi-grid">
 
-    <div style="width:220px;">
-      <h3>🏡 Home Raised</h3>
-      <p>Socialized in a clean, loving environment.</p>
-    </div>
-
+```
+  <div class="testi-card">
+    <div class="stars">★★★★★</div>
+    <blockquote>"Our Maine Coon arrived healthy, happy, and perfectly socialized. The whole process was smooth and professional. We couldn't be happier!"</blockquote>
+    <div class="testi-author">— Sarah M., Manhattan</div>
   </div>
+
+  <div class="testi-card">
+    <div class="stars">★★★★★</div>
+    <blockquote>"I was nervous at first but Morty Dom made it so easy. They answered every question and our Ragdoll is absolutely perfect."</blockquote>
+    <div class="testi-author">— James R., New Jersey</div>
+  </div>
+
+  <div class="testi-card">
+    <div class="stars">★★★★★</div>
+    <blockquote>"Our Munchkin is the sweetest thing. You can tell these kittens are raised with real love. Already recommending to all our friends!"</blockquote>
+    <div class="testi-author">— Lisa T., Brooklyn</div>
+  </div>
+
 </div>
-  <div class="section">
-    <h2>Our Specialties</h2>
-    <p>We are dedicated to raising gentle, healthy, well-socialized kittens with exceptional temperaments.</p>
-    
-    <div class="breeds">
-      <div class="breed">
-        <h3>Maine Coon</h3>
-        <p>Gentle giants known for their size, intelligence, and playful nature.</p>
-      </div>
-      <div class="breed">
-        <h3>Munchkin</h3>
-        <p>Adorable, short-legged companions with big personalities and endless energy.</p>
-      </div>
-      <div class="breed">
-        <h3>Ragdoll</h3>
-        <p>Docile, affectionate, and famously floppy lap cats with striking blue eyes.</p>
-      </div>
-    </div>
-  </div>
+```
+
+  </section>
+
+  <!-- CTA BANNER -->
+
+  <section class="cta-banner">
+    <h2>Ready to Find Your <em>Perfect Kitten?</em></h2>
+    <p>Browse our currently available kittens and reserve yours today.</p>
+    <a href="kittens.html" class="btn btn-primary">View Available Kittens</a>
+  </section>
+
+  <!-- FOOTER -->
 
   <footer>
-    <p>© 2026 Morty Dom Cattery | All Kittens Come Vaccinated & Health Guaranteed</p>
+    <p>© 2026 Morty Dom Cattery &nbsp;|&nbsp; Brooklyn, New York &nbsp;|&nbsp;
+      <a href="contact.html">Contact Us</a>
+    </p>
+    <p style="margin-top:8px; font-size:12px; opacity:0.6;">All Kittens Come Vaccinated &amp; Health Guaranteed &nbsp;·&nbsp; TICA Registered</p>
   </footer>
+
 </body>
 </html>
