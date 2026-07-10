@@ -12,63 +12,31 @@
 </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light only">
   <title>Morty Dom Cattery | Premium Kittens</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap');
-    :root { --gold: #C9A961; --charcoal: #1A1A1A; --cream: #F8F5F0; --gray: #6B6B6B; --green: #2D5F3F; --red: #8B2635; --amber: #B86F00; }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.6; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-    header { background: white; border-bottom: 1px solid #E8E3DD; padding: 30px 0; text-align: center; }
-    header h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; }
-    header p { color: var(--gray); margin-top: 8px; font-size: 0.95rem; letter-spacing: 0.5px; }
-    .gold-line { width: 60px; height: 2px; background: var(--gold); margin: 20px auto 0; }
-    .intro { text-align: center; padding: 60px 20px 40px; max-width: 700px; margin: 0 auto; }
-    .intro h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 16px; }
-    .kitten-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 40px; padding: 20px 0 80px; }
-    .kitten-card { background: white; border: 1px solid #E8E3DD; border-radius: 8px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-    .kitten-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.08); }
-    .gallery-main { width: 100%; height: 380px; object-fit: cover; display: block; }
-    .gallery-thumbs { display: flex; gap: 8px; padding: 12px; background: #FAFAFA; overflow-x: auto; }
-    .gallery-thumbs img { width: 60px; height: 60px; object-fit: cover; border-radius: 4px; cursor: pointer; opacity: 0.6; border: 2px solid transparent; transition: all 0.2s ease; }
-    .gallery-thumbs img:hover, .gallery-thumbs img.active { opacity: 1; border-color: var(--gold); }
-    .kitten-info { padding: 24px; }
-    .kitten-header { display: flex; justify-content: space-between; align-items: start; margin-bottom: 12px; }
-    .kitten-name { font-family: 'Playfair Display', serif; font-size: 1.75rem; font-weight: 500; }
-    .status { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.8px; padding: 6px 12px; border-radius: 20px; text-transform: uppercase; }
-    .status.available { background: #E8F5E9; color: var(--green); }
-    .status.reserved { background: #FFF3E0; color: var(--amber); }
-    .status.sold { background: #FFEBEE; color: var(--red); }
-    .kitten-meta { display: flex; gap: 16px; font-size: 0.9rem; color: var(--gray); margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #F0EDE8; }
-    .price { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 12px; }
-    .personality { font-size: 0.95rem; color: var(--gray); margin-bottom: 20px; line-height: 1.7; }
-    .btn { display: inline-block; width: 100%; text-align: center; background: var(--charcoal); color: white; padding: 14px 24px; text-decoration: none; font-weight: 500; font-size: 0.9rem; border-radius: 4px; transition: background 0.3s ease; }
-    .btn:hover { background: var(--gold); color: var(--charcoal); }
-    .btn.disabled { background: #E8E3DD; color: var(--gray); cursor: not-allowed; pointer-events: none; }
-    .contact-section { background: var(--charcoal); color: white; padding: 80px 20px; text-align: center; }
-    .contact-section h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 16px; }
-    .btn-gold { background: var(--gold); color: var(--charcoal); padding: 16px 40px; font-weight: 600; }
-    footer { background: #111; color: #777; text-align: center; padding: 30px 20px; font-size: 0.85rem; }
-    @media (max-width: 768px) { .kitten-grid { grid-template-columns: 1fr; gap: 30px; } }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Morty Dom Cattery</h1>
-      <p>PREMIUM RAGDOLL • MAINE COON • MUNCHKIN KITTENS</p>
-      <div class="gold-line"></div>
-    </div>
-  </header>
 
-  <section class="intro">
-    <div class="container">
-      <h2>Available Kittens</h2>
-      <p>Hand-raised with love. Each kitten comes socialized, vet-checked, and ready for their forever home.</p>
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="nav-brand">Morty Dom Cattery</a>
+    <div class="nav-links">
+      <a href="kittens.html">Kittens</a>
+      <a href="health.html">Health</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
     </div>
+  </nav>
+
+  <section style="padding:70px 20px 20px;">
+    <p class="section-label">Our Kittens</p>
+    <h2 class="section-title">Available Kittens</h2>
+    <p class="section-desc">Hand-raised with love. Each kitten comes socialized, vet-checked, and ready for their forever home.</p>
   </section>
 
-  <main class="container">
+  <main>
     <div class="kitten-grid">
 
       <!-- Luna - SOLD - 4 photos -->
@@ -176,262 +144,203 @@
           <a href="https://mortydomcattery.site/contact.html" class="btn">Inquire About Aurora</a>
         </div>
       </div>
-    <!-- ============================================= -->
-<!-- CORRECTED VERSION — Harlam, Molly, Daisy       -->
-<!-- This REPLACES the broken blocks currently on   -->
-<!-- kittens.html. The fix: the big main photo now  -->
-<!-- sits OUTSIDE .gallery-thumbs (as its own line)  -->
-<!-- instead of inside it with the small thumbnails -->
-<!-- ============================================= -->
 
-<!-- Harlam - AVAILABLE - 3 photos -->
-<div class="kitten-card">
-  <img src="images/Harlam1.JPG" alt="Harlam" class="gallery-main" id="harlam-main">
-  <div class="gallery-thumbs">
-    <img src="images/Harlam1.JPG" class="active" onclick="changeImage('harlam-main', this)">
-    <img src="images/Harlam2.JPG" onclick="changeImage('harlam-main', this)">
-    <img src="images/Harlam3.JPG" onclick="changeImage('harlam-main', this)">
-  </div>
-  <div class="kitten-info">
-    <div class="kitten-header"><h3 class="kitten-name">Harlam</h3><span class="status available">Available</span></div>
-    <div class="kitten-meta"><span>Maine Coon</span><span>Male</span><span>13 weeks</span></div>
-    <div class="price">$2,500</div>
-    <p class="personality">Harlam is the perfect mix of "majestic forest creature" and "complete comic relief." He's got the grand Maine Coon presence, but his personality is pure entertainment.</p>
-    <a href="https://mortydomcattery.site/contact.html" class="btn">Inquire About Harlam</a>
-  </div>
-</div>
+      <!-- Harlam - AVAILABLE - 3 photos -->
+      <div class="kitten-card">
+        <img src="images/Harlam1.JPG" alt="Harlam" class="gallery-main" id="harlam-main">
+        <div class="gallery-thumbs">
+          <img src="images/Harlam1.JPG" class="active" onclick="changeImage('harlam-main', this)">
+          <img src="images/Harlam2.JPG" onclick="changeImage('harlam-main', this)">
+          <img src="images/Harlam3.JPG" onclick="changeImage('harlam-main', this)">
+        </div>
+        <div class="kitten-info">
+          <div class="kitten-header"><h3 class="kitten-name">Harlam</h3><span class="status available">Available</span></div>
+          <div class="kitten-meta"><span>Maine Coon</span><span>Male</span><span>13 weeks</span></div>
+          <div class="price">$2,500</div>
+          <p class="personality">Harlam is the perfect mix of "majestic forest creature" and "complete comic relief." He's got the grand Maine Coon presence, but his personality is pure entertainment.</p>
+          <a href="https://mortydomcattery.site/contact.html" class="btn">Inquire About Harlam</a>
+        </div>
+      </div>
 
-<!-- Molly - AVAILABLE - 8 photos -->
-<div class="kitten-card">
-  <img src="images/Molly1.JPG" alt="Molly" class="gallery-main" id="molly-main">
-  <div class="gallery-thumbs">
-    <img src="images/Molly1.JPG" class="active" onclick="changeImage('molly-main', this)">
-    <img src="images/Molly2.JPG" onclick="changeImage('molly-main', this)">
-    <img src="images/Molly3.JPG" onclick="changeImage('molly-main', this)">
-    <img src="images/Molly4.JPG" onclick="changeImage('molly-main', this)">
-    <img src="images/Molly5.JPG" onclick="changeImage('molly-main', this)">
-    <img src="images/Molly6.JPG" onclick="changeImage('molly-main', this)">
-    <img src="images/Molly7.JPG" onclick="changeImage('molly-main', this)">
-    <img src="images/Molly8.JPG" onclick="changeImage('molly-main', this)">
-  </div>
-  <div class="kitten-info">
-    <div class="kitten-header"><h3 class="kitten-name">Molly</h3><span class="status available">Available</span></div>
-    <div class="kitten-meta"><span>Ragdoll</span><span>Female</span><span>11 weeks</span></div>
-    <div class="price">$1,000</div>
-    <p class="personality">Molly is the absolute definition of a gentle soul. She's a quiet, angelic little Ragdoll who prefers long naps, warm laps, and stealing hearts over causing typical kitten chaos.</p>
-    <a href="https://mortydomcattery.site/contact.html" class="btn">Inquire About Molly</a>
-  </div>
-</div>
+      <!-- Molly - AVAILABLE - 8 photos -->
+      <div class="kitten-card">
+        <img src="images/Molly1.JPG" alt="Molly" class="gallery-main" id="molly-main">
+        <div class="gallery-thumbs">
+          <img src="images/Molly1.JPG" class="active" onclick="changeImage('molly-main', this)">
+          <img src="images/Molly2.JPG" onclick="changeImage('molly-main', this)">
+          <img src="images/Molly3.JPG" onclick="changeImage('molly-main', this)">
+          <img src="images/Molly4.JPG" onclick="changeImage('molly-main', this)">
+          <img src="images/Molly5.JPG" onclick="changeImage('molly-main', this)">
+          <img src="images/Molly6.JPG" onclick="changeImage('molly-main', this)">
+          <img src="images/Molly7.JPG" onclick="changeImage('molly-main', this)">
+          <img src="images/Molly8.JPG" onclick="changeImage('molly-main', this)">
+        </div>
+        <div class="kitten-info">
+          <div class="kitten-header"><h3 class="kitten-name">Molly</h3><span class="status available">Available</span></div>
+          <div class="kitten-meta"><span>Ragdoll</span><span>Female</span><span>11 weeks</span></div>
+          <div class="price">$1,000</div>
+          <p class="personality">Molly is the absolute definition of a gentle soul. She's a quiet, angelic little Ragdoll who prefers long naps, warm laps, and stealing hearts over causing typical kitten chaos.</p>
+          <a href="https://mortydomcattery.site/contact.html" class="btn">Inquire About Molly</a>
+        </div>
+      </div>
 
-<!-- Daisy - AVAILABLE - 7 photos -->
-<div class="kitten-card">
-  <img src="images/Daisy1.JPG" alt="Daisy" class="gallery-main" id="daisy-main">
-  <div class="gallery-thumbs">
-    <img src="images/Daisy1.JPG" class="active" onclick="changeImage('daisy-main', this)">
-    <img src="images/Daisy2.JPG" onclick="changeImage('daisy-main', this)">
-    <img src="images/Daisy3.JPG" onclick="changeImage('daisy-main', this)">
-    <img src="images/Daisy4.JPG" onclick="changeImage('daisy-main', this)">
-    <img src="images/Daisy5.JPG" onclick="changeImage('daisy-main', this)">
-    <img src="images/Daisy6.JPG" onclick="changeImage('daisy-main', this)">
-    <img src="images/Daisy7.JPG" onclick="changeImage('daisy-main', this)">
-  </div>
-  <div class="kitten-info">
-    <div class="kitten-header"><h3 class="kitten-name">Daisy</h3><span class="status available">Available</span></div>
-    <div class="kitten-meta"><span>Munchkin</span><span>Female</span><span>12 weeks</span></div>
-    <div class="price">$1,200</div>
-    <p class="personality">Daisy is a cheerful, pint-sized bundle of joy who completely lights up any room she waddles into. She might be short on stature, but she is absolutely massive on charm and affection.</p>
-    <a href="https://mortydomcattery.site/contact.html" class="btn">Inquire About Daisy</a>
-  </div>
-</div>
-<!-- ============================================= -->
-<!-- NEW KITTENS — Athena, Pixel, Sebastian,        -->
-<!-- Waffles, Winston                               -->
-<!-- Paste this block AFTER Daisy's card closes     -->
-<!-- and BEFORE the closing </div></main>            -->
-<!-- ============================================= -->
+      <!-- Daisy - AVAILABLE - 7 photos -->
+      <div class="kitten-card">
+        <img src="images/Daisy1.JPG" alt="Daisy" class="gallery-main" id="daisy-main">
+        <div class="gallery-thumbs">
+          <img src="images/Daisy1.JPG" class="active" onclick="changeImage('daisy-main', this)">
+          <img src="images/Daisy2.JPG" onclick="changeImage('daisy-main', this)">
+          <img src="images/Daisy3.JPG" onclick="changeImage('daisy-main', this)">
+          <img src="images/Daisy4.JPG" onclick="changeImage('daisy-main', this)">
+          <img src="images/Daisy5.JPG" onclick="changeImage('daisy-main', this)">
+          <img src="images/Daisy6.JPG" onclick="changeImage('daisy-main', this)">
+          <img src="images/Daisy7.JPG" onclick="changeImage('daisy-main', this)">
+        </div>
+        <div class="kitten-info">
+          <div class="kitten-header"><h3 class="kitten-name">Daisy</h3><span class="status available">Available</span></div>
+          <div class="kitten-meta"><span>Munchkin</span><span>Female</span><span>12 weeks</span></div>
+          <div class="price">$1,200</div>
+          <p class="personality">Daisy is a cheerful, pint-sized bundle of joy who completely lights up any room she waddles into. She might be short on stature, but she is absolutely massive on charm and affection.</p>
+          <a href="https://mortydomcattery.site/contact.html" class="btn">Inquire About Daisy</a>
+        </div>
+      </div>
 
-<!-- Athena - AVAILABLE - 10 photos -->
-<div class="kitten-card">
-  <img src="images/Athena1.JPG" alt="Athena" class="gallery-main" id="athena-main">
-  <div class="gallery-thumbs">
-    <img src="images/Athena1.JPG" class="active" onclick="changeImage('athena-main', this)">
-    <img src="images/Athena2.JPG" onclick="changeImage('athena-main', this)">
-    <img src="images/Athena3.JPG" onclick="changeImage('athena-main', this)">
-    <img src="images/Athena4.JPG" onclick="changeImage('athena-main', this)">
-    <img src="images/Athena5.JPG" onclick="changeImage('athena-main', this)">
-    <img src="images/Athena6.JPG" onclick="changeImage('athena-main', this)">
-    <img src="images/Athena7.JPG" onclick="changeImage('athena-main', this)">
-    <img src="images/Athena8.JPG" onclick="changeImage('athena-main', this)">
-    <img src="images/Athena9.JPG" onclick="changeImage('athena-main', this)">
-    <img src="images/Athena10.JPG" onclick="changeImage('athena-main', this)">
-  </div>
-  <div class="kitten-info">
-    <div class="kitten-header"><h3 class="kitten-name">Athena</h3><span class="status available">Available</span></div>
-    <div class="kitten-meta"><span>Ragdoll</span><span>Female</span><span>11 weeks</span></div>
-    <div class="price">$600</div>
-    <p class="personality">Athena prefers sleeping directly on your chest or tucked into your armpit.</p>
-    <a href="https://mortydomcattery.site/contact.html" class="btn">Inquire About Athena</a>
-  </div>
-</div>
+      <!-- Athena - AVAILABLE - 10 photos -->
+      <div class="kitten-card">
+        <img src="images/Athena1.JPG" alt="Athena" class="gallery-main" id="athena-main">
+        <div class="gallery-thumbs">
+          <img src="images/Athena1.JPG" class="active" onclick="changeImage('athena-main', this)">
+          <img src="images/Athena2.JPG" onclick="changeImage('athena-main', this)">
+          <img src="images/Athena3.JPG" onclick="changeImage('athena-main', this)">
+          <img src="images/Athena4.JPG" onclick="changeImage('athena-main', this)">
+          <img src="images/Athena5.JPG" onclick="changeImage('athena-main', this)">
+          <img src="images/Athena6.JPG" onclick="changeImage('athena-main', this)">
+          <img src="images/Athena7.JPG" onclick="changeImage('athena-main', this)">
+          <img src="images/Athena8.JPG" onclick="changeImage('athena-main', this)">
+          <img src="images/Athena9.JPG" onclick="changeImage('athena-main', this)">
+          <img src="images/Athena10.JPG" onclick="changeImage('athena-main', this)">
+        </div>
+        <div class="kitten-info">
+          <div class="kitten-header"><h3 class="kitten-name">Athena</h3><span class="status available">Available</span></div>
+          <div class="kitten-meta"><span>Ragdoll</span><span>Female</span><span>11 weeks</span></div>
+          <div class="price">$600</div>
+          <p class="personality">Athena prefers sleeping directly on your chest or tucked into your armpit.</p>
+          <a href="https://mortydomcattery.site/contact.html" class="btn">Inquire About Athena</a>
+        </div>
+      </div>
 
-<!-- Pixel - AVAILABLE - 6 photos -->
-<div class="kitten-card">
-  <img src="images/Pixel1.JPG" alt="Pixel" class="gallery-main" id="pixel-main">
-  <div class="gallery-thumbs">
-    <img src="images/Pixel1.JPG" class="active" onclick="changeImage('pixel-main', this)">
-    <img src="images/Pixel2.JPG" onclick="changeImage('pixel-main', this)">
-    <img src="images/Pixel3.JPG" onclick="changeImage('pixel-main', this)">
-    <img src="images/Pixel4.JPG" onclick="changeImage('pixel-main', this)">
-    <img src="images/Pixel5.JPG" onclick="changeImage('pixel-main', this)">
-    <img src="images/Pixel6.JPG" onclick="changeImage('pixel-main', this)">
-  </div>
-  <div class="kitten-info">
-    <div class="kitten-header"><h3 class="kitten-name">Pixel</h3><span class="status available">Available</span></div>
-    <div class="kitten-meta"><span>Munchkin</span><span>Male</span><span>12 weeks</span></div>
-    <div class="price">$700</div>
-    <p class="personality">Rarely meows, but keeps a low, engine-like purr running the moment he wakes up or makes eye contact with you.</p>
-    <a href="https://mortydomcattery.site/contact.html" class="btn">Inquire About Pixel</a>
-  </div>
-</div>
+      <!-- Pixel - AVAILABLE - 6 photos -->
+      <div class="kitten-card">
+        <img src="images/Pixel1.JPG" alt="Pixel" class="gallery-main" id="pixel-main">
+        <div class="gallery-thumbs">
+          <img src="images/Pixel1.JPG" class="active" onclick="changeImage('pixel-main', this)">
+          <img src="images/Pixel2.JPG" onclick="changeImage('pixel-main', this)">
+          <img src="images/Pixel3.JPG" onclick="changeImage('pixel-main', this)">
+          <img src="images/Pixel4.JPG" onclick="changeImage('pixel-main', this)">
+          <img src="images/Pixel5.JPG" onclick="changeImage('pixel-main', this)">
+          <img src="images/Pixel6.JPG" onclick="changeImage('pixel-main', this)">
+        </div>
+        <div class="kitten-info">
+          <div class="kitten-header"><h3 class="kitten-name">Pixel</h3><span class="status available">Available</span></div>
+          <div class="kitten-meta"><span>Munchkin</span><span>Male</span><span>12 weeks</span></div>
+          <div class="price">$700</div>
+          <p class="personality">Rarely meows, but keeps a low, engine-like purr running the moment he wakes up or makes eye contact with you.</p>
+          <a href="https://mortydomcattery.site/contact.html" class="btn">Inquire About Pixel</a>
+        </div>
+      </div>
 
-<!-- Sebastian - AVAILABLE - 5 photos -->
-<div class="kitten-card">
-  <img src="images/Sebastian1.JPG" alt="Sebastian" class="gallery-main" id="sebastian-main">
-  <div class="gallery-thumbs">
-    <img src="images/Sebastian1.JPG" class="active" onclick="changeImage('sebastian-main', this)">
-    <img src="images/Sebastian2.JPG" onclick="changeImage('sebastian-main', this)">
-    <img src="images/Sebastian3.JPG" onclick="changeImage('sebastian-main', this)">
-    <img src="images/Sebastian4.JPG" onclick="changeImage('sebastian-main', this)">
-    <img src="images/Sebastian5.JPG" onclick="changeImage('sebastian-main', this)">
-  </div>
-  <div class="kitten-info">
-    <div class="kitten-header"><h3 class="kitten-name">Sebastian</h3><span class="status available">Available</span></div>
-    <div class="kitten-meta"><span>Maine Coon</span><span>Male</span><span>12 weeks</span></div>
-    <div class="price">$750</div>
-    <p class="personality">If you are looking for a kitten who wants to be right in the middle of everything you do, this little one is it. He is a high-energy, incredibly curious Maine Coon who treats everyday life like a game. Whether you are typing on a laptop, making dinner, or folding laundry, he will be right there "helping" you out.</p>
-    <a href="https://mortydomcattery.site/contact.html" class="btn">Inquire About Sebastian</a>
-  </div>
-</div>
+      <!-- Sebastian - AVAILABLE - 5 photos -->
+      <div class="kitten-card">
+        <img src="images/Sebastian1.JPG" alt="Sebastian" class="gallery-main" id="sebastian-main">
+        <div class="gallery-thumbs">
+          <img src="images/Sebastian1.JPG" class="active" onclick="changeImage('sebastian-main', this)">
+          <img src="images/Sebastian2.JPG" onclick="changeImage('sebastian-main', this)">
+          <img src="images/Sebastian3.JPG" onclick="changeImage('sebastian-main', this)">
+          <img src="images/Sebastian4.JPG" onclick="changeImage('sebastian-main', this)">
+          <img src="images/Sebastian5.JPG" onclick="changeImage('sebastian-main', this)">
+        </div>
+        <div class="kitten-info">
+          <div class="kitten-header"><h3 class="kitten-name">Sebastian</h3><span class="status available">Available</span></div>
+          <div class="kitten-meta"><span>Maine Coon</span><span>Male</span><span>12 weeks</span></div>
+          <div class="price">$750</div>
+          <p class="personality">If you are looking for a kitten who wants to be right in the middle of everything you do, this little one is it. He is a high-energy, incredibly curious Maine Coon who treats everyday life like a game. Whether you are typing on a laptop, making dinner, or folding laundry, he will be right there "helping" you out.</p>
+          <a href="https://mortydomcattery.site/contact.html" class="btn">Inquire About Sebastian</a>
+        </div>
+      </div>
 
-<!-- Waffles - AVAILABLE - 10 photos -->
-<div class="kitten-card">
-  <img src="images/Waffles1.JPG" alt="Waffles" class="gallery-main" id="waffles-main">
-  <div class="gallery-thumbs">
-    <img src="images/Waffles1.JPG" class="active" onclick="changeImage('waffles-main', this)">
-    <img src="images/Waffles2.JPG" onclick="changeImage('waffles-main', this)">
-    <img src="images/Waffles3.JPG" onclick="changeImage('waffles-main', this)">
-    <img src="images/Waffles4.JPG" onclick="changeImage('waffles-main', this)">
-    <img src="images/Waffles5.JPG" onclick="changeImage('waffles-main', this)">
-    <img src="images/Waffles6.JPG" onclick="changeImage('waffles-main', this)">
-    <img src="images/Waffles7.JPG" onclick="changeImage('waffles-main', this)">
-    <img src="images/Waffles8.JPG" onclick="changeImage('waffles-main', this)">
-    <img src="images/Waffles9.JPG" onclick="changeImage('waffles-main', this)">
-    <img src="images/Waffles10.JPG" onclick="changeImage('waffles-main', this)">
-  </div>
-  <div class="kitten-info">
-    <div class="kitten-header"><h3 class="kitten-name">Waffles</h3><span class="status available">Available</span></div>
-    <div class="kitten-meta"><span>Munchkin</span><span>Female</span><span>12 weeks</span></div>
-    <div class="price">$650</div>
-    <p class="personality">Don't let those adorable short legs fool you—this little girl is built for speed! She is a high-energy, incredibly fast little racer who loves to drift around corners and chase after her favorite toys. She has a low center of gravity and a ton of confidence, treating the whole house like her personal racetrack.</p>
-    <a href="https://mortydomcattery.site/contact.html" class="btn">Inquire About Waffles</a>
-  </div>
-</div>
+      <!-- Waffles - AVAILABLE - 10 photos -->
+      <div class="kitten-card">
+        <img src="images/Waffles1.JPG" alt="Waffles" class="gallery-main" id="waffles-main">
+        <div class="gallery-thumbs">
+          <img src="images/Waffles1.JPG" class="active" onclick="changeImage('waffles-main', this)">
+          <img src="images/Waffles2.JPG" onclick="changeImage('waffles-main', this)">
+          <img src="images/Waffles3.JPG" onclick="changeImage('waffles-main', this)">
+          <img src="images/Waffles4.JPG" onclick="changeImage('waffles-main', this)">
+          <img src="images/Waffles5.JPG" onclick="changeImage('waffles-main', this)">
+          <img src="images/Waffles6.JPG" onclick="changeImage('waffles-main', this)">
+          <img src="images/Waffles7.JPG" onclick="changeImage('waffles-main', this)">
+          <img src="images/Waffles8.JPG" onclick="changeImage('waffles-main', this)">
+          <img src="images/Waffles9.JPG" onclick="changeImage('waffles-main', this)">
+          <img src="images/Waffles10.JPG" onclick="changeImage('waffles-main', this)">
+        </div>
+        <div class="kitten-info">
+          <div class="kitten-header"><h3 class="kitten-name">Waffles</h3><span class="status available">Available</span></div>
+          <div class="kitten-meta"><span>Munchkin</span><span>Female</span><span>12 weeks</span></div>
+          <div class="price">$650</div>
+          <p class="personality">Don't let those adorable short legs fool you—this little girl is built for speed! She is a high-energy, incredibly fast little racer who loves to drift around corners and chase after her favorite toys. She has a low center of gravity and a ton of confidence, treating the whole house like her personal racetrack.</p>
+          <a href="https://mortydomcattery.site/contact.html" class="btn">Inquire About Waffles</a>
+        </div>
+      </div>
 
-<!-- Winston - AVAILABLE - 5 photos -->
-<div class="kitten-card">
-  <img src="images/Winston1.JPG" alt="Winston" class="gallery-main" id="winston-main">
-  <div class="gallery-thumbs">
-    <img src="images/Winston1.JPG" class="active" onclick="changeImage('winston-main', this)">
-    <img src="images/Winston2.JPG" onclick="changeImage('winston-main', this)">
-    <img src="images/Winston3.JPG" onclick="changeImage('winston-main', this)">
-    <img src="images/Winston4.JPG" onclick="changeImage('winston-main', this)">
-    <img src="images/Winston5.JPG" onclick="changeImage('winston-main', this)">
-  </div>
-  <div class="kitten-info">
-    <div class="kitten-header"><h3 class="kitten-name">Winston</h3><span class="status available">Available</span></div>
-    <div class="kitten-meta"><span>Munchkin</span><span>Male</span><span>11 weeks</span></div>
-    <div class="price">$700</div>
-    <p class="personality">This precious baby is the definition of a lap cat. Because of his sweet Munchkin traits, he looks like a permanent kitten and has the gentle, loving temperament to match. He is happiest when he is curled up in your arms, purring up a storm and looking up at you with his big, round eyes.</p>
-    <a href="https://mortydomcattery.site/contact.html" class="btn">Inquire About Winston</a>
-  </div>
-</div>
-
-
+      <!-- Winston - AVAILABLE - 5 photos -->
+      <div class="kitten-card">
+        <img src="images/Winston1.JPG" alt="Winston" class="gallery-main" id="winston-main">
+        <div class="gallery-thumbs">
+          <img src="images/Winston1.JPG" class="active" onclick="changeImage('winston-main', this)">
+          <img src="images/Winston2.JPG" onclick="changeImage('winston-main', this)">
+          <img src="images/Winston3.JPG" onclick="changeImage('winston-main', this)">
+          <img src="images/Winston4.JPG" onclick="changeImage('winston-main', this)">
+          <img src="images/Winston5.JPG" onclick="changeImage('winston-main', this)">
+        </div>
+        <div class="kitten-info">
+          <div class="kitten-header"><h3 class="kitten-name">Winston</h3><span class="status available">Available</span></div>
+          <div class="kitten-meta"><span>Munchkin</span><span>Male</span><span>11 weeks</span></div>
+          <div class="price">$700</div>
+          <p class="personality">This precious baby is the definition of a lap cat. Because of his sweet Munchkin traits, he looks like a permanent kitten and has the gentle, loving temperament to match. He is happiest when he is curled up in your arms, purring up a storm and looking up at you with his big, round eyes.</p>
+          <a href="https://mortydomcattery.site/contact.html" class="btn">Inquire About Winston</a>
+        </div>
+      </div>
 
     </div>
   </main>
 
-  <section id="contact" class="contact-section">
-    <div class="container">
-      <h2>Reserve Your Kitten</h2>
-      <p>Ready to welcome a Morty Dom kitten into your family? Contact us today.</p>
-      <a href="https://mortydomcattery.site/contact.html" class="btn btn-gold">Contact Us</a>
-    </div>
+  <!-- CTA BANNER (matches homepage) -->
+  <section class="cta-banner">
+    <h2>Ready to Find Your <em>Perfect Kitten?</em></h2>
+    <p>Ready to welcome a Morty Dom kitten into your family? Contact us today.</p>
+    <a href="https://mortydomcattery.site/contact.html" class="btn btn-gold">Contact Us</a>
   </section>
 
+  <!-- FOOTER -->
   <footer>
-    <div class="container">
-      <p>&copy; 2026 Morty Dom Cattery. All kittens are home-raised and vet-checked.</p>
-    </div>
+    <p>&copy; 2026 Morty Dom Cattery &nbsp;|&nbsp; All kittens are home-raised and vet-checked.</p>
   </footer>
 
-<script>
-  function changeImage(mainId, thumb) {
-    document.getElementById(mainId).src = thumb.src;
-    let thumbs = thumb.parentElement.querySelectorAll('img');
-    thumbs.forEach(t => t.classList.remove('active'));
-    thumb.classList.add('active');
-  }
-</script>
-<a href="https://m.me/MortyDomCatterry" class="mdc-chat-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on Messenger">
-  <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
-    <path d="M12 2C6.48 2 2 6.14 2 11.25c0 2.91 1.45 5.5 3.73 7.15.19.14.3.36.29.6l-.06 1.83c-.02.58.55 1.02 1.09.79l2.06-.88c.18-.08.39-.07.56.02 1.01.5 2.14.79 3.33.79 5.52 0 10-4.14 10-9.25S17.52 2 12 2zm1 12.25l-2.5-2.67-4.8 2.67 5.25-5.58 2.5 2.67 4.8-2.67-5.25 5.58z"/>
-  </svg>
-  <span class="mdc-chat-label">Chat with us</span>
-</a>
+  <script>
+    function changeImage(mainId, thumb) {
+      document.getElementById(mainId).src = thumb.src;
+      let thumbs = thumb.parentElement.querySelectorAll('img');
+      thumbs.forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+    }
+  </script>
 
-<style>
-  .mdc-chat-btn {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    background: #2b241b;
-    color: #d4b483;
-    height: 56px;
-    padding: 0 20px 0 16px;
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    box-shadow: 0 6px 20px rgba(43,36,27,0.35);
-    z-index: 9999;
-    font-family: 'Jost', -apple-system, sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-    border: 1px solid rgba(212,180,131,0.3);
-    transition: transform 0.2s ease, background 0.2s ease;
-  }
-  .mdc-chat-btn:hover {
-    transform: translateY(-2px);
-    background: #3a3226;
-  }
-  .mdc-chat-btn svg {
-    flex-shrink: 0;
-  }
-  @media (max-width: 480px) {
-    .mdc-chat-label {
-      display: none;
-    }
-    .mdc-chat-btn {
-      width: 56px;
-      height: 56px;
-      padding: 0;
-      justify-content: center;
-      border-radius: 50%;
-    }
-  }
-</style>
+  <a href="https://m.me/MortyDomCatterry" class="mdc-chat-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on Messenger">
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+      <path d="M12 2C6.48 2 2 6.14 2 11.25c0 2.91 1.45 5.5 3.73 7.15.19.14.3.36.29.6l-.06 1.83c-.02.58.55 1.02 1.09.79l2.06-.88c.18-.08.39-.07.56.02 1.01.5 2.14.79 3.33.79 5.52 0 10-4.14 10-9.25S17.52 2 12 2zm1 12.25l-2.5-2.67-4.8 2.67 5.25-5.58 2.5 2.67 4.8-2.67-5.25 5.58z"/>
+    </svg>
+    <span class="mdc-chat-label">Chat with us</span>
+  </a>
+
 </body>
 </html>
