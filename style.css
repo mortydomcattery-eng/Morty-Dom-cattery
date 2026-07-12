@@ -181,6 +181,10 @@ body {
   color: var(--dark2); font-size: 15px; text-align: center;
 }
 
+/* ---------- GENERIC PAGE SECTION WRAPPER ---------- */
+.page-section { padding: 90px 20px; max-width: 1000px; margin: 0 auto; }
+.page-intro { max-width: 680px; margin: 0 auto 30px; text-align: center; font-size: 16px; color: var(--dark2); }
+
 /* ---------- INFO / PILLAR CARDS ----------
    Used for: "Why Choose Us", "Breeding Philosophy",
    "Life at the Cattery" â€” any icon + heading + text card. */
