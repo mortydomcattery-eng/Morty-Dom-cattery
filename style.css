@@ -311,7 +311,7 @@ footer a:hover { text-decoration: underline; }
   border-bottom: 1px solid var(--cream2);
 }
 .checklist li:last-child { border-bottom: none; }
-.checklist li::before { content: 'âœ“'; color: var(--gold2); font-weight: 700; flex-shrink: 0; }
+.checklist li::before { content: '\2713'; color: var(--gold2); font-weight: 700; flex-shrink: 0; }
 .checklist-card {
   background: #fff; border: 1px solid var(--cream2); border-radius: 6px;
   padding: 36px; max-width: 680px; margin: 0 auto;
