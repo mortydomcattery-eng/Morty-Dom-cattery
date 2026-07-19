@@ -342,7 +342,35 @@ footer a:hover { text-decoration: underline; }
 @media (max-width: 700px) {
   .breed-test-grid { grid-template-columns: 1fr; }
 }
-/* ---------- CONTACT METHOD CARDS ---------- */
+/* ---------- VIDEO GRID ---------- */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 960px;
+  margin: 32px auto 0;
+}
+.video-slot {
+  position: relative;
+  padding-bottom: 177.78%; /* 9:16 aspect ratio for Shorts */
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #000;
+}
+.video-slot iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: none;
+  border-radius: 8px;
+}
+@media (max-width: 768px) {
+  .video-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+}
+@media (max-width: 480px) {
+  .video-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+}
 .contact-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; max-width: 900px; margin: 0 auto; }
 .contact-method-card {
   background: #fff; border: 1px solid var(--cream2); border-radius: 6px;
